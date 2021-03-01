@@ -1,0 +1,37 @@
+PFont font;
+
+
+void setup() {
+
+  font = loadFont ("Veneer-40.vlw");
+  textFont (font, 90);
+
+    fullScreen();
+  //size (800, 800);
+  frameRate (60); 
+  noCursor();
+}
+void draw() {
+
+  fill (0, 255); 
+  rectMode (CORNER);
+  rect (0, 0, width, height);
+
+  fill (frameCount%255, 0, 0);
+  strokeWeight(5);
+  stroke (255, 0, 0);
+  text("PASSO", width/2.5, mouseY, 400, 400);
+
+  fill (0, 0, frameCount%255); 
+  strokeWeight(5);
+  stroke(0, 0, 255);
+  text ("PASSO", mouseX, height/2, 400, 400);
+
+  fill (0, frameCount%255, frameCount%255);
+  strokeWeight(5);
+  stroke (0, 255, 255);
+  text ("É SÓ MAS É UM", mouseX, mouseY, frameCount%400, frameCount%400);
+
+  println(frameRate);
+  loop(); 
+}
